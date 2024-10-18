@@ -8,12 +8,9 @@
                 "maxLambdaSize": "15mb",
                 "runtime": "python3.12"
             }
-        },
-        {
-            "src": "staticfiles/**",
-            "use": "@vercel/static"
         }
     ],
+    "buildCommand": "python manage.py migrate && python manage.py collectstatic --noinput",
     "routes": [
         {
             "src": "/static/(.*)",
